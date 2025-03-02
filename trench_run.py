@@ -13,17 +13,15 @@ pygame.init()
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 600
 
-# Don't create the screen here - move it into main()
-# screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-
-# Keep all your original constants and class definitions here...
+# Keep all your original constants and class definitions...
 
 async def main():
     try:
         # Initialize display with proper flags for web
         if platform.system() == "Emscripten":
             canvas = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), 
-                                          flags=pygame.RESIZABLE)
+                                          flags=pygame.SCALED | 
+                                          pygame.RESIZABLE)
         else:
             canvas = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
             
@@ -32,7 +30,11 @@ async def main():
         # Get the screen surface
         screen = pygame.display.get_surface()
         
-        # Keep all your original game initialization code...
+        # Rest of your original game initialization...
+        global SCROLL_SPEED, SPAWN_INTERVAL, explosions
+        SCROLL_SPEED = BASE_SCROLL_SPEED
+        explosions = []
+        
         player = Player()
         tie_fighters = []
         health_powerups = []
@@ -41,21 +43,28 @@ async def main():
         enemy_lasers = []
         spawn_timer = 0
         
-        # Create temp_surface once
         temp_surface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
-        
-        # Game loop
-        running = True
         clock = pygame.time.Clock()
+        running = True
 
         while running:
-            # Add web compatibility pause
             if platform.system() == "Emscripten":
                 await asyncio.sleep(0)
+                
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    running = False
+                elif event.type == KEYDOWN:
+                    if event.key == K_SPACE:
+                        lasers.append(Laser(player.x, player.y - 10))
+
+            # Rest of your game loop...
             
-            # Keep all your original game loop code...
+            screen.fill((0, 0, 0))
+            temp_surface.fill((0, 0, 0))
             
-            # Make sure to update the display at the end
+            # Your drawing code...
+            
             pygame.display.flip()
             clock.tick(60)
 
@@ -64,6 +73,5 @@ async def main():
     finally:
         pygame.quit()
 
-# Entry point
 if __name__ == "__main__":
     asyncio.run(main()) 
