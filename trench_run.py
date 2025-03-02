@@ -6,60 +6,64 @@ import asyncio
 import platform
 import sys
 
-# Initialize Pygame with proper flags for web
+# Initialize Pygame
 pygame.init()
 
-# Set up the display with proper flags for web
+# Set up the display
 WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 600
 
-# Remove the early screen initialization
+# Don't create the screen here - move it into main()
 # screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-# pygame.display.set_caption("Star Wars Trench Run")
 
-# Rest of your constants...
+# Keep all your original constants and class definitions here...
 
 async def main():
     try:
         # Initialize display with proper flags for web
         if platform.system() == "Emscripten":
-            pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), 
-                                  flags=pygame.OPENGL | 
-                                        pygame.DOUBLEBUF | 
-                                        pygame.RESIZABLE)
+            canvas = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), 
+                                          flags=pygame.RESIZABLE)
         else:
-            pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+            canvas = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
             
         pygame.display.set_caption("Star Wars Trench Run")
         
-        # Create the screen surface after initialization
+        # Get the screen surface
         screen = pygame.display.get_surface()
         
-        # Rest of your game initialization...
+        # Keep all your original game initialization code...
+        player = Player()
+        tie_fighters = []
+        health_powerups = []
+        powerup_timer = 0
+        lasers = []
+        enemy_lasers = []
+        spawn_timer = 0
         
+        # Create temp_surface once
+        temp_surface = pygame.Surface((WINDOW_WIDTH, WINDOW_HEIGHT))
+        
+        # Game loop
+        running = True
+        clock = pygame.time.Clock()
+
         while running:
-            try:
-                # Add proper web frame timing
-                if platform.system() == "Emscripten":
-                    await asyncio.sleep(0)  # Required for web
-                
-                # Rest of your game loop...
-                
-                # Make sure to flip the display at the end of each frame
-                pygame.display.flip()
-                
-                # Control frame rate
-                clock.tick(60)
-                
-            except Exception as e:
-                print(f"Error in game loop: {e}")
-                break
-                
+            # Add web compatibility pause
+            if platform.system() == "Emscripten":
+                await asyncio.sleep(0)
+            
+            # Keep all your original game loop code...
+            
+            # Make sure to update the display at the end
+            pygame.display.flip()
+            clock.tick(60)
+
     except Exception as e:
         print(f"Error in main: {e}")
     finally:
         pygame.quit()
 
-# Web-specific entry point
+# Entry point
 if __name__ == "__main__":
     asyncio.run(main()) 
