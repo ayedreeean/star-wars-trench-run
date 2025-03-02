@@ -1,33 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars Trench Run</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        #canvas {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    body {background-color: #000000}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #76b4ff; -webkit-text-stroke: #76b4ff}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #998af8; -webkit-text-stroke: #998af8}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #da7cd4; -webkit-text-stroke: #da7cd4}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #cdccd5; -webkit-text-stroke: #cdccd5}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #5a5a5a; -webkit-text-stroke: #5a5a5a}
+    span.s1 {font-kerning: none; color: #767676; background-color: #131313; -webkit-text-stroke: 0px #767676}
+    span.s2 {font-kerning: none; background-color: #131313}
+    span.s3 {font-kerning: none; color: #f8c762; background-color: #131313; -webkit-text-stroke: 0px #f8c762}
+    span.s4 {font-kerning: none; color: #998af8; background-color: #131313; -webkit-text-stroke: 0px #998af8}
+    span.s5 {font-kerning: none; color: #cdccd5; background-color: #131313; -webkit-text-stroke: 0px #cdccd5}
+    span.s6 {font-kerning: none; color: #da7cd4; background-color: #131313; -webkit-text-stroke: 0px #da7cd4}
+    span.s7 {font-kerning: none; color: #76b4ff; background-color: #131313; -webkit-text-stroke: 0px #76b4ff}
+    span.s8 {font-kerning: none; color: #73cfb8; background-color: #131313; -webkit-text-stroke: 0px #73cfb8}
+    span.s9 {font-kerning: none; color: #e5bd7b; background-color: #131313; -webkit-text-stroke: 0px #e5bd7b}
+    span.s10 {font-kerning: none; color: #f5bc50; background-color: #131313; -webkit-text-stroke: 0px #f5bc50}
+    span.s11 {font-kerning: none; color: #e9a06d; background-color: #131313; -webkit-text-stroke: 0px #e9a06d}
+    span.s12 {font-kerning: none; color: #72c9c3; background-color: #131313; -webkit-text-stroke: 0px #72c9c3}
+  </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <script src="main.js"></script>
-    <script>
-        // Load and launch the game
-        window.addEventListener('load', async () => {
-            await pygbag.load('main');
-        });
-    </script>
+<p class="p1"><span class="s1">&lt;!</span><span class="s2">DOCTYPE</span><span class="s3"> </span><span class="s4">html</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">html</span><span class="s3"> </span><span class="s4">lang</span><span class="s5">=</span><span class="s6">"en"</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">head</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s7">meta</span><span class="s3"> </span><span class="s2">charset</span><span class="s5">=</span><span class="s6">"UTF-8"</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s7">meta</span><span class="s3"> </span><span class="s4">name</span><span class="s5">=</span><span class="s2">"viewport"</span><span class="s3"> </span><span class="s4">content</span><span class="s5">=</span><span class="s2">"width=device-width, initial-scale=1.0"</span><span class="s1">&gt;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s7">title</span><span class="s1">&gt;</span><span class="s2">Star Wars Trench Run</span><span class="s1">&lt;/</span><span class="s7">title</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">style</span><span class="s1">&gt;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s8">body</span><span class="s2"> {</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">margin</span><span class="s2">: </span><span class="s9">0</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">padding</span><span class="s2">: </span><span class="s9">0</span><span class="s2">;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s2">background-color</span><span class="s5">: </span><span class="s10">black</span><span class="s5">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">display</span><span class="s2">: </span><span class="s6">flex</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">justify-content</span><span class="s2">: </span><span class="s6">center</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">align-items</span><span class="s2">: </span><span class="s6">center</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">height</span><span class="s2">: </span><span class="s9">100vh</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">width</span><span class="s2">: </span><span class="s9">100vw</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">#canvas</span><span class="s2"> {</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">width</span><span class="s2">: </span><span class="s9">800px</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">height</span><span class="s2">: </span><span class="s9">600px</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">display</span><span class="s2">: </span><span class="s6">block</span><span class="s2">;</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s2">style</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">head</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">body</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s7">canvas</span><span class="s3"> </span><span class="s2">id</span><span class="s5">=</span><span class="s6">"canvas"</span><span class="s3"> </span><span class="s2">oncontextmenu</span><span class="s5">=</span><span class="s6">"</span><span class="s5">event</span><span class="s6">.</span><span class="s11">preventDefault</span><span class="s6">()"</span><span class="s1">&gt;&lt;/</span><span class="s7">canvas</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">script</span><span class="s3"> </span><span class="s4">src</span><span class="s5">=</span><span class="s6">"main.js"</span><span class="s1">&gt;&lt;/</span><span class="s2">script</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;</span><span class="s2">script</span><span class="s1">&gt;</span></p>
+<p class="p5"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s2"><i>// Load and launch the game</i></span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>window.</span><span class="s11">addEventListener</span><span class="s2">(</span><span class="s6">'load'</span><span class="s2">, </span><span class="s12">async</span><span class="s2"> () </span><span class="s12">=&gt;</span><span class="s2"> {</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s8">await</span><span class="s2"> pygbag.</span><span class="s9">load</span><span class="s2">(</span><span class="s6">'main'</span><span class="s2">);</span></p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;/</span><span class="s2">script</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">body</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">html</span><span class="s1">&gt;</span><span class="s5"><span class="Apple-converted-space"> </span></span></p>
 </body>
-</html> 
+</html>
